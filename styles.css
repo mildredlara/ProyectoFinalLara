@@ -1,0 +1,157 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+/* Mensaje en el DOM*/
+.oculto {
+    display: none;
+}
+.mensaje-exito {
+    color: green;
+    font-weight: bold;
+}
+.mensaje-error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos generales */
+body {
+    background-color: #f8f4f9;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Encabezado */
+header {
+    background-color: #ff99cc;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+/* Contenedor principal */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Secciones */
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #ff66a3;
+    margin-bottom: 10px;
+}
+
+/* Formulario de registro */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #ff66a3;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff3385;
+}
+
+/* Productos */
+#listaProductos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Diseño de cada tarjeta de producto */
+.producto {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+/* Imagen de los productos */
+.producto img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Botón de compra */
+.producto button {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* Carrito */
+#listaCarrito {
+    list-style: none;
+    padding: 0;
+}
+
+#listaCarrito li {
+    background: #ffe6f0;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+/* Sección de puntos */
+#puntos input {
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+#resultadoPuntos {
+    font-weight: bold;
+    color: #ff3385;
+    margin-top: 10px;
+}
