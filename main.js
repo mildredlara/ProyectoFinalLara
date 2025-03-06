@@ -50,14 +50,26 @@ function mostrarProductos() {
     });
 }
 
-// Registrar usuario
 formRegistro.addEventListener("submit", (e) => {
     e.preventDefault();
-    const nombre = document.getElementById("nombre").value;
-    const correo = document.getElementById("email").value;
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("email").value.trim();
+
+    // Expresión regular para validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (nombre === "") {
+        mostrarMensaje("El nombre no puede estar vacío.", "error");
+        return;
+    }
+
+    if (!emailRegex.test(correo)) {
+        mostrarMensaje("Ingresa un correo electrónico válido.", "error");
+        return;
+    }
 
     if (usuarios.find(u => u.correo === correo)) {
-        mostrarMensaje("Este correo ya está registrado", "error");
+        mostrarMensaje("Este correo ya está registrado.", "error");
         return;
     }
 
@@ -65,12 +77,25 @@ formRegistro.addEventListener("submit", (e) => {
     usuarios.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-    // Guardar usuario actual en sesión
     usuarioActual = nuevoUsuario;
     localStorage.setItem("usuarioActual", JSON.stringify(usuarioActual));
 
     mostrarMensaje(`¡Bienvenido(a), ${nombre}! Has sido registrado exitosamente.`, "exito");
     formRegistro.reset();
+});
+
+const emailInput = document.getElementById("email");
+
+emailInput.addEventListener("input", () => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (emailRegex.test(emailInput.value)) {
+        emailInput.classList.remove("error");
+        emailInput.classList.add("correcto");
+    } else {
+        emailInput.classList.remove("correcto");
+        emailInput.classList.add("error");
+    }
 });
 
 function actualizarPuntos() {

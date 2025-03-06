@@ -155,3 +155,13 @@ button:hover {
     color: #ff3385;
     margin-top: 10px;
 }
+
+input.error {
+    border: 2px solid red;
+    background-color: #ffe6e6;
+}
+
+input.correcto {
+    border: 2px solid green;
+    background-color: #e6ffe6;
+}
